@@ -11,10 +11,9 @@ header{
   height: 60px;
   width: 100%;
   align-items: center;
-  background-color: #4f4f4f;
   margin: 0 auto;
+  background-color: #fff;
   z-index: 3;
-  color: #fff;
 }
 .nav{
   display:flex;
@@ -22,9 +21,9 @@ header{
   align-items: center;
 }
 .leftnav{
+  font-family: 'Climate Crisis';
   display: flex;
-  font-size: 24px;
-  font-weight: 700;
+  font-size: 36px;
   cursor: pointer;
   text-align: center;
   align-items: center;
@@ -49,13 +48,13 @@ header{
   cursor: pointer;
 }
 .search{
-  background-color: #fff;
+  /* background-color: #fff;
   border-radius: 50%;
   border: #fff solid 2px;
   padding: 2px;
   height: 30px;
   width: 30px;
-  box-sizing: border-box;
+  box-sizing: border-box; */
 }
 .clickimg{
   position: absolute;
@@ -72,7 +71,7 @@ header{
   align-items: center;
   height: 30px;
   border-radius: 15%;
-  border: #fff solid 2px;
+  border: #000 solid 2px;
   padding: 0 2px;
   box-sizing: border-box;
 }
@@ -91,8 +90,7 @@ footer{
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
-  background-color: #4f4f4f;
+  background-color: #F5F5F5;
   min-height: 104px;
   top:94px;
   position: relative;

@@ -44,3 +44,6 @@ a{
 a:hover, a:visited, a:link, a:active {
     text-decoration: none;
 }
+blockquote{
+    background-color: 	#FFA07A;
+}
