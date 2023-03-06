@@ -1,0 +1,46 @@
+article{
+    width: 1200px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+.header{
+    display: flex;
+    flex-wrap: wrap;
+}
+.title{
+    font-size: 30px;
+    font-weight: 700;
+    width: 100%;
+    margin: 10px 0;
+}
+.category>span{
+    text-align: center;
+    font-size: 12px;
+    margin-right: 5px;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #4f4f4f;
+    color: #fff;
+  }
+.imgContainer{
+width: 100%;
+margin: 10px 0;
+}
+.imgContainer>img{
+width: 100%;
+height: auto;
+object-fit:cover;
+border-radius: 5px;
+}
+.textContainer img{
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    object-fit: cover;
+}
+a{
+    color: #CD3333;
+}
+a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+}

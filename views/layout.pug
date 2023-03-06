@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    block title
+    link(rel='stylesheet', href='/css/base.css')
+    block link
+  body
+    header
+      .nav
+        .leftnav 
+          div Bnews
+        .categories 
+        .rightnav
+          div(id='searchContainer')
+            input(type="text", placeholder="請輸入關鍵字搜尋" list='category' id="searchInput")
+            .search
+              img(src="../images/icon/search.png") 
+            div(class='searchTable', id='category')
+          .signIn 
+            span Log In
+    main
+      block content
+    
+
+    footer 
+      div COPYRIGHT © 2023 Bnews
+    script(src="../javascripts/navBar.js")
+    block script

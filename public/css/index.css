@@ -1,0 +1,99 @@
+article{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container{
+    color: #4f4f4f;
+    height:150px ;
+    display: flex;
+    margin-top:10px ;
+    cursor: pointer;
+}
+.imgContainer{
+    width: 200px;
+    height: 100%;
+}
+.imgContainer>img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    border-radius: 5px;
+}
+.textContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.textContainer>div{
+    margin: 0 0 10px 10px;
+}
+.category>span{
+    text-align: center;
+    font-size: 12px;
+    margin-right: 5px;
+    border-radius: 5px;
+    padding: 2px;
+    background-color: #4f4f4f;
+    color: #fff;
+}
+.title{
+    font-size: 20px;
+    font-weight: 700;
+}
+a:hover, a:visited, a:link, a:active {
+    text-decoration: none;
+    }
+.container:hover{
+    color: #CD3333;
+}
+.pageswitch{
+    margin-top: 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.pagenumbers{
+    display: flex;
+    align-items: center;
+}
+.prepage,
+.nextpage,
+.pagenumber{
+    line-height: 30px;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    margin: 2px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #D3D3D3;
+    border-radius: 50%;
+}
+.prepage,
+.nextpage{
+    display: none;
+}
+
+.prepage:hover,
+.nextpage:hover,
+.pagenumber:hover{
+    background-color: #6e6c6c;
+    color: #fff;
+}
+.pagenumber.active{
+    background-color: #4f4f4f;
+    color: #fff;
+}
+.dotcontainer{
+    display:flex;
+    align-items: center;
+    margin: 0 5px;
+}
+.pagedot{
+    margin: 5px;
+    background-color: #4f4f4f;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+}
