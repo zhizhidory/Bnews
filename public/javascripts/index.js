@@ -11,7 +11,7 @@ const fetchNewsAPI = (url) => {
         return response.json();
     }).then(function(data){
     let alldata =data.data
-    let article = document.querySelector("article")
+    let article = document.querySelector(".AllContainer")
     console.log(alldata)
     if(alldata.length===0){
         console.log('no')
@@ -22,6 +22,7 @@ const fetchNewsAPI = (url) => {
         let {imgurl, title, date, NewsUrl, cat, author} = element
         let container = document.createElement("a")
         container.className="container"
+
         let newsurl = NewsUrl.split("/")
         container.href = "/"+newsurl[3]
         article.appendChild(container)
@@ -31,7 +32,6 @@ const fetchNewsAPI = (url) => {
         let img = document.createElement("img")
         img.src = imgurl
         let textcontainer = document.createElement("div")
-        textcontainer.className ="textContainer"
         container.appendChild(textcontainer)
         let newstitle = document.createElement("div")
         newstitle.textContent = title
@@ -49,10 +49,17 @@ const fetchNewsAPI = (url) => {
         newsdate.textContent = date
         let newsauthor = document.createElement("div")
         newsauthor.textContent = "By "+author
+        if(index >2){
+            container.style.gridColumn= "1 / 4"
+            textcontainer.className ="textContainer"
+        }else{
+            container.className="TopContainer"
+            imgcontainer.style.width="100%"
+        }
         imgcontainer.appendChild(img)
         textcontainer.appendChild(newstitle)
-        textcontainer.appendChild(newsdate)
         textcontainer.appendChild(newsauthor)
+        textcontainer.appendChild(newsdate)
         textcontainer.appendChild(categories)
     });
 })

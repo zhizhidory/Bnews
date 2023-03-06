@@ -3,6 +3,33 @@ article{
     flex-direction: column;
     justify-content: center;
 }
+.AllContainer{
+    max-width: 1200px;
+    display: grid;
+    gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 300px repeat(7,150px);
+}
+.TopContainer{
+    position: relative;
+    color: #fff;
+}
+.TopContainer>div:last-child{
+    height: 100px;
+    position:absolute;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #0000007f;
+    padding: 5px;
+}
+.TopContainer>div:last-child>div:nth-child(3){
+    margin-left: 20px;
+}
+.TopContainer>div:last-child>div:last-child{
+    width: 100%;
+}
+
 .container{
     color: #4f4f4f;
     height:150px ;
@@ -33,7 +60,7 @@ article{
     font-size: 12px;
     margin-right: 5px;
     border-radius: 5px;
-    padding: 2px;
+    padding: 3px;
     background-color: #4f4f4f;
     color: #fff;
 }
@@ -43,9 +70,11 @@ article{
 }
 a:hover, a:visited, a:link, a:active {
     text-decoration: none;
-    }
+}
+
+.TopContainer:hover,
 .container:hover{
-    color: #CD3333;
+    color: #d04343;
 }
 .pageswitch{
     margin-top: 40px;
