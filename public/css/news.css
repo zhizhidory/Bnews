@@ -25,10 +25,15 @@ article{
     width: 100%;
     margin: 10px 0;
 }
-.author>span{
-    cursor: pointer;
+.date{
+    margin-left: 15px;
 }
-.category>span{
+.author>a{
+    color: #CD3333;
+    font-weight: 700;
+}
+
+.category>a{
     text-align: center;
     font-size: 12px;
     margin-right: 5px;
@@ -36,16 +41,16 @@ article{
     padding: 2px;
     background-color: #4f4f4f;
     color: #fff;
-  }
+}
 .imgContainer{
 width: 100%;
 margin: 10px 0;
 }
 .imgContainer>img{
-width: 100%;
-height: auto;
-object-fit:cover;
-border-radius: 5px;
+    width: 100%;
+    height: auto;
+    object-fit:cover;
+    border-radius: 5px;
 }
 .textContainer img{
     display: flex;
@@ -53,7 +58,7 @@ border-radius: 5px;
     max-width: 100%;
     object-fit: cover;
 }
-a{
+.textContainer>a{
     color: #CD3333;
 }
 a:hover, a:visited, a:link, a:active {

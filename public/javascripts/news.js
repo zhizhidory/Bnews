@@ -12,9 +12,10 @@ fetch(url).then(function(response){
     const classNames =[".category", ".title", ".author", ".date", "imgContainer", ".textContainer"]
     document.querySelector(".title").textContent=title
     cat.forEach(el => {
-            let span = document.createElement("span")
-            span.textContent=el
-            document.querySelector(".category").appendChild(span)
+            let a = document.createElement("a")
+            a.textContent=el
+            a.href="/?keyword="+el
+            document.querySelector(".category").appendChild(a)
         })
     document.querySelector(".author>a").textContent=author
     document.querySelector(".author>a").href="/"+"?author="+author
