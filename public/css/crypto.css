@@ -1,0 +1,44 @@
+.SideBar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: 2/3/9/3;
+}
+.CryptoContainer{
+    margin-left: 30px;
+    padding: 10px;
+    width: 100%;
+    display: grid;
+    align-items: center;
+    /* grid-column: 100%; */
+    grid-template-rows:  repeat(20, 1fr);
+}
+.Crypto{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    border-bottom: 2px solid #D3D3D3;
+}
+.Crypto>div{
+    margin: 5px;
+}
+.CrptoSymbol{
+    width: 60px;
+}
+.CrptoCurrentPrice{
+    flex-grow: 1;
+}
+.CrptoPriceChange{
+    width: 60px;
+    text-align: end;
+    color: green;
+}
+.CrptoPriceChange-negative{
+    width: 60px;
+    text-align: end;
+    color: red;
+}
+.CrptoImage{
+    width: 36px;
+    height: 36px;
+}

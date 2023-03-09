@@ -15,7 +15,7 @@ article{
     color: #fff;
 }
 .TopContainer>div:last-child{
-    height: 100px;
+    height: 120px;
     position:absolute;
     bottom: 0;
     display: flex;
@@ -23,11 +23,20 @@ article{
     background-color: #0000007f;
     padding: 5px;
 }
+.TopContainer>div:last-child>div{
+    margin-bottom: 10px;
+}
 .TopContainer>div:last-child>div:nth-child(3){
     margin-left: 20px;
 }
 .TopContainer>div:last-child>div:last-child{
     width: 100%;
+}
+.TopContainer>.imgContainer>img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    border-radius: 5px;
 }
 
 .container{
@@ -41,8 +50,8 @@ article{
     width: 200px;
     height: 100%;
 }
-.imgContainer>img{
-    width: 100%;
+.container>.imgContainer>img{
+    width: 200px;
     height: 100%;
     object-fit:cover;
     border-radius: 5px;

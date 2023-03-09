@@ -50,7 +50,7 @@ const fetchNewsAPI = (url) => {
         let newsauthor = document.createElement("div")
         newsauthor.textContent = "By "+author
         if(index >2){
-            container.style.gridColumn= "1 / 4"
+            container.style.gridColumn= "1 / 3"
             textcontainer.className ="textContainer"
         }else{
             container.className="TopContainer"

@@ -1,4 +1,3 @@
-
 const pathname = location.pathname
 const searchname = location.search
 currentpage = parseInt(currentpage)
