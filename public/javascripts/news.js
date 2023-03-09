@@ -4,38 +4,24 @@ fetch(url).then(function(response){
 }).then(function(data){
     let article = document.querySelector("article")
     let {imgurl, title, date, NewsUrl, cat, author, content} = data.data
-    document.title = title
-    let header = document.createElement("div")
-    header.className=".header"
-    article.appendChild(header)
-    let imgcontainer = document.createElement("div")
-    imgcontainer.className ="imgContainer"
-    article.appendChild(imgcontainer)
-    let img = document.createElement("img")
-    img.src = imgurl
-    let newstitle = document.createElement("div")
-    newstitle.className="title"
-    newstitle.textContent = title
-    let categories = document.createElement("div")
-    categories.className = "category"
+    console.log(imgurl, NewsUrl)
+    if(NewsUrl.includes("https://www.blocktempo.com/")){
+        imgurl=imgurl.replace("-350x250","")
+        console.log(imgurl)
+    }
+    const classNames =[".category", ".title", ".author", ".date", "imgContainer", ".textContainer"]
+    document.querySelector(".title").textContent=title
     cat.forEach(el => {
-        let span = document.createElement("span")
-        span.textContent=el
-        categories.appendChild(span)
-    })
-    let newsdate = document.createElement('div')
+            let span = document.createElement("span")
+            span.textContent=el
+            document.querySelector(".category").appendChild(span)
+        })
+    document.querySelector(".author>a").textContent=author
+    document.querySelector(".author>a").href="/"+"?author="+author
     let datetime =new Date(date)
     date=datetime.toLocaleDateString()
-    newsdate.textContent = date
-    let newsauthor = document.createElement("div")
-    newsauthor.textContent = "By "+author
-    header.appendChild(categories)
-    header.appendChild(newstitle)
-    header.appendChild(newsauthor)
-    header.appendChild(newsdate)
-    imgcontainer.appendChild(img)
-    let textcontainer = document.createElement("div")
-    textcontainer.className ="textContainer"
-    textcontainer.innerHTML = content
-    article.appendChild(textcontainer)
-})
+    document.querySelector(".date").textContent=date
+    document.querySelector(".imgContainer>img").src=imgurl
+    document.querySelector(".textContainer").innerHTML=content
+
+ })

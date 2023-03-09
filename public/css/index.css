@@ -1,3 +1,12 @@
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top:100px;
+    min-height: calc(100% - 264px);
+    position: relative;
+    flex-direction: column;
+  }
 article{
     display: flex;
     flex-direction: column;

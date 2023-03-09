@@ -2,10 +2,15 @@ const index = (location.pathname).indexOf('page/')
 let currentpage = index===-1?1:location.pathname.slice([index+5])
 let url = "/api/news?page="+currentpage
 if(location.search){
-    let keyword = location.search.replace("?","")
-    url="/api/news?page="+currentpage+"&"+keyword
+    let search = location.search.replace("?","")
+    if(search.includes("author")){
+        url="/api/news/author?page="+currentpage+"&"+search
+    }else{
+        url="/api/news?page="+currentpage+"&"+search
+    }
 }
 
+console.log(url)
 const fetchNewsAPI = (url) => {
     fetch(url).then(function(response){
         return response.json();

@@ -1,5 +1,6 @@
 const pathname = location.pathname
 const searchname = location.search
+console.log(searchname)
 currentpage = parseInt(currentpage)
 let countUrl = "/api/news/count" 
 if(searchname){

@@ -1,5 +1,17 @@
-article{
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top:100px;
+    min-height: calc(100% - 264px);
+    position: relative;
+  }
+.content{
+    display: flex;
     width: 1200px;
+}
+article{
+    width: 720px;
     padding: 10px;
     box-sizing: border-box;
 }
@@ -12,6 +24,9 @@ article{
     font-weight: 700;
     width: 100%;
     margin: 10px 0;
+}
+.author>span{
+    cursor: pointer;
 }
 .category>span{
     text-align: center;
@@ -45,5 +60,22 @@ a:hover, a:visited, a:link, a:active {
     text-decoration: none;
 }
 blockquote{
-    background-color: 	#FFA07A;
+    /* background-color: 	#FFA07A; */
+    margin: 0;
+    padding: 2px;
+    border-left: 4px solid 	#DCDCDC;
+    color: #A9A9A9
+}
+blockquote>p{
+    margin: 2px;
+    font-style: italic;
+}
+
+figure{
+    margin: 20px 0;
+}
+
+figcaption {
+    text-align: center;
+    color: #D3D3D3;
 }

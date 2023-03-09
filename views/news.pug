@@ -2,9 +2,25 @@ extends layout
 
 block link
   link(rel='stylesheet', href='/css/news.css')
+  link(rel='stylesheet', href='/css/crypto_news.css')
 
 block content
-  article 
+  .content
+    article
+      .header 
+        .category 
+        .title 
+        .author By 
+          a
+        .date
+      .imgContainer
+        img
+      .textContainer
+    .SideBar
+      .CryptoContainer
+
+   
 
 block script
-   script(src="../javascripts/news.js") 
+  script(src="../javascripts/news.js")
+  script(src="../javascripts/crypto.js") 

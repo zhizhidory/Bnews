@@ -37,17 +37,26 @@ router.get('/categories', function(req, res, next) {
 
 router.get('/count', function(req, res, next) {
     let keyword = req.query.keyword
-    console.log(keyword)
-    const datacategory = async() => {
+    let Author = req.query.author
+    let query={}
+    if(keyword){
+      query = {$or:[
+      {cat:keyword},
+      {title:{'$regex':keyword}}
+    ]}
+  }else if(Author){
+    query = {author:Author}
+  }
+    const datacount = async() => {
     const client = new MongoClient(uri);
     const database = client.db('bignews');
     const crawlerdata = database.collection('crawlerdata');
     let data 
     try {
-      let query = keyword? {$or:[
-        {cat:keyword},
-        {title:{'$regex':keyword}}
-    ]}: {} 
+    //   let query = keyword? {$or:[
+    //     {cat:keyword},
+    //     {title:{'$regex':keyword}}
+    // ]}: {} 
       count = await crawlerdata.countDocuments(query);
       data = {count}
     }
@@ -58,15 +67,38 @@ router.get('/count', function(req, res, next) {
       await client.close();
       return {data}
     }}
-    datacategory().then((result) => {
+    datacount().then((result) => {
       res.send(result)
   })});
+
+  // router.get('/author/count', function(req, res, next) {
+  //   let Author = req.query.author
+  //   const datacount = async() => {
+  //   const client = new MongoClient(uri);
+  //   const database = client.db('bignews');
+  //   const crawlerdata = database.collection('crawlerdata');
+  //   let data 
+  //   try {
+  //     let query = {author:Author}
+  //     count = await crawlerdata.countDocuments(query);
+  //     data = {count}
+  //   }
+  //   catch(err) {
+  //       data = err
+  //   }
+  //   finally {
+  //     await client.close();
+  //     return {data}
+  //   }}
+  //   datacount().then((result) => {
+  //     res.send(result)
+  // })});
 
 
 router.get('/', function(req, res, next) {
     let page = parseInt(req.query.page)
     let keyword = req.query.keyword
-    const datacategory = async(page, keyword) => {
+    const getdata = async(page, keyword) => {
       const client = new MongoClient(uri);
       const database = client.db('bignews');
       const crawlerdata = database.collection('crawlerdata');
@@ -97,14 +129,52 @@ router.get('/', function(req, res, next) {
         await client.close();
         return result
     }}
-    datacategory(page, keyword).then((result) => {
+    getdata(page, keyword).then((result) => {
       res.send(result)
   })
 });
 
+router.get('/author', function(req, res, next) {
+  let page = parseInt(req.query.page)
+  let Author = req.query.author
+  const getdata = async(page, Author) => {
+    const client = new MongoClient(uri);
+    const database = client.db('bignews');
+    const crawlerdata = database.collection('crawlerdata');
+    try {
+      let data = []
+      let SkipNumber = (page-1)*10
+      let query = {author:Author}
+   
+      const options = {
+        sort: { date: -1 , title:1},
+        projection: { _id: 0, content:0 },
+        limit: 10,
+        skip: SkipNumber
+      };
+      cursor = await crawlerdata.find(query, options);
+      await cursor.forEach((el, index) => {
+          data.push(el)  
+      })
+      let NextPage = data.length <10 ? null : page+1
+      result = {data, NextPage}
+    }
+    catch(err) {
+      result = {error: true, message: err.name};
+    }
+    finally {
+      await client.close();
+      return result
+  }}
+  getdata(page, Author).then((result) => {
+    res.send(result)
+})
+});
+
+
 router.get('/:id', function(req, res, next) {
     id =req.params.id
-    const datacategory = async(id) => {
+    const getdata = async(id) => {
       const client = new MongoClient(uri);
       const database = client.db('bignews');
       const crawlerdata = database.collection('crawlerdata');
@@ -123,7 +193,7 @@ router.get('/:id', function(req, res, next) {
         await client.close();
         return result
     }}
-    datacategory(id).then((result) => {
+    getdata(id).then((result) => {
       res.send(result)
   })
 });
