@@ -24,7 +24,7 @@ article{
     color: #fff;
 }
 .TopContainer>div:last-child{
-    height: 120px;
+    min-height: 120px;
     position:absolute;
     bottom: 0;
     display: flex;
