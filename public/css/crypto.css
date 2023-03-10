@@ -1,22 +1,27 @@
 .SideBar{
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content:end;
+    align-items: start;
     grid-area: 2/3/9/3;
+    position: relative;
 }
 .CryptoContainer{
+    margin-top: 20px;
+    position: sticky;
+    top:70px;
     margin-left: 30px;
     padding: 10px;
-    width: 100%;
+    width: 70%;
     display: grid;
     align-items: center;
-    /* grid-column: 100%; */
     grid-template-rows:  repeat(20, 1fr);
 }
 .Crypto{
+    font-size: 12px;
+    color: #808080;
     display: flex;
     align-items: center;
-    height: 50px;
+    height: 30px;
     border-bottom: 2px solid #D3D3D3;
 }
 .Crypto>div{
@@ -39,6 +44,6 @@
     color: red;
 }
 .CrptoImage{
-    width: 36px;
-    height: 36px;
+    width: 20px;
+    height: 20px;
 }
