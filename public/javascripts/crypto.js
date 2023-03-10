@@ -48,7 +48,6 @@ const FetchCrypto = (api) =>{
                 CryptoData[3].class="CrptoPriceChange-negative"
             }
     
-            let list = [image, symbol, current_price, price_change_percentage_24h]
             CryptoData.forEach(element =>{
                 let el = document.createElement(element.type)
                 el.className= element.class
@@ -56,13 +55,6 @@ const FetchCrypto = (api) =>{
                 el.src = element.src
                 Crypto.appendChild(el)
             })
-            const CrptoPriceChange = document.querySelectorAll(".CrptoPriceChange")
-            // CrptoPriceChange.forEach(element =>{
-            //     let PriceChange =element.textContent
-            //     if
-            //     PriceChange.st
-            //     console.log(test)
-            // })
         })
     })
 }

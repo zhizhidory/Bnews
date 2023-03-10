@@ -2,7 +2,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    top:100px;
+    top:80px;
     min-height: calc(100% - 264px);
     position: relative;
   }
@@ -58,7 +58,7 @@ margin: 10px 0;
     max-width: 100%;
     object-fit: cover;
 }
-.textContainer>a{
+.textContainer a{
     color: #CD3333;
 }
 a:hover, a:visited, a:link, a:active {

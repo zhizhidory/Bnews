@@ -18,7 +18,7 @@ fetch(url).then(function(response){
             document.querySelector(".category").appendChild(a)
         })
     document.querySelector(".author>a").textContent=author
-    document.querySelector(".author>a").href="/"+"?author="+author
+    document.querySelector(".author>a").href="/?author="+author
     let datetime =new Date(date)
     date=datetime.toLocaleDateString()
     document.querySelector(".date").textContent=date
